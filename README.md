@@ -9,6 +9,11 @@ python preprocess_rep.py -lm bert -input ./dataset/persona_linking_test.json -ou
 python preprocess_rep.py -lm bert -input ./dataset/persona_linking_train.json -output ./dataset/persona_linking_train.bert
 ```
 
+### Test Set (to trec format)
+```
+python preprocess_trec.py -input ./dataset/persona_linking_test.json -output ./output/persona_linking_test.txt
+```
+
 ### Model Training
 ```
 python train.py -epochs 200 -save_model ./model/bert_ -method att_sparse -alpha 0.4 -train_dataset ./dataset/persona_linking_train.bert -dev_dataset ./dataset/persona_linking_dev.bert
